@@ -1,0 +1,105 @@
+.container-1,
+.container-2,
+.container-3,
+.container-4,
+.container-5 {
+  width: 75%;
+  border: 2px solid rgb(75, 83, 57);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flex-box-container-1,
+.flex-box-container-2,
+.flex-box-rps,
+.flex-box-pick-color,
+.flex-blackjack-row-1,
+.flex-blackjack-row-2,
+.flex-blackjack-row-3 {
+  display: flex;
+  padding: 10px;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  flex-wrap: wrap;
+  min-height: 50px;
+}
+
+.flex-blackjack-row-1 {
+  background: url("http://www.brainiumstudios.com/site/assets/images/blackjack-header-l.jpg");
+  /* background-image: url("../images/bg1.jpg"); */
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+}
+
+.flex-blackjack-row-2 {
+  background: url("https://www.legitgamblingsites.com/wp-content/uploads/2018/04/blackjack-double-down1-1024x499.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+.flex-blackjack-row-1 div {
+  border: 1px solid whitesmoke;
+  padding: 10px;
+  flex: 1;
+  height: 25rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.flex-blackjack-row-1 img {
+  width: 25%;
+  padding: 10px;
+}
+
+.flex-blackjack-row-1 > * {
+  z-index: 1;
+}
+
+.flex-blackjack-row-1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.flex-blackjack-row-2 button {
+  border: 1px solid black;
+  box-shadow: 0 10px 20px rgb(26, 53, 26);
+  padding: 10px;
+}
+
+.flex-blackjack-row-2 button:hover {
+  transform: scale(1.1);
+}
+
+/* .flex-blackjack-row-2 div {
+  border: 1px solid black;
+  padding: 10px;
+} */
+
+table,
+th,
+td {
+  padding: 5px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.flex-box-container-2 img {
+  box-shadow: 0 5px 10px #9e9b9b;
+  margin: 0.5rem;
+}
+
+#cat-generator {
+  margin: 0.5rem;
+}
+
+.flex-box-rps img:hover {
+  box-shadow: 0 10px 50px rgba(37, 50, 233, 1);
+}
