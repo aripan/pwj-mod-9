@@ -1,36 +1,14 @@
-//! Challenge 1: Your Age in Days
-const age = () => {
-  let birthYear = prompt("Your birth Year?");
-  let numberInDays = (2020 - birthYear) * 365;
-  let h1 = document.createElement("h1");
-  h1.setAttribute("id", "ageInDays");
-  let text = document.createTextNode("Your are " + numberInDays + " old days.");
-  h1.appendChild(text);
-  document.getElementById("result").appendChild(h1);
+//! Game 1
+
+let scores = {
+  winner: 0,
+  losser: 0,
+  tied: 0,
 };
 
-const reset1 = () => {
-  document.getElementById("ageInDays").remove();
-};
+let humanChoice, botChoice;
 
-//! Challenge 2
-const generateCat = () => {
-  let image = document.createElement("img");
-  image.src =
-    "https://images.wagwalkingweb.com/media/articles/cat/degeneration-iris-eye/degeneration-iris-eye.jpg";
-  image.style = "width:10rem";
-  image.setAttribute("id", "catGenerator");
-
-  document.getElementById("cat").appendChild(image);
-};
-
-const reset2 = () => {
-  document.getElementById("catGenerator").remove();
-};
-
-//! Challenge 3
 function rpsGame(yourChoice) {
-  let humanChoice, botChoice;
   humanChoice = yourChoice.id;
 
   botChoice = numberToChoice(randToRpsInt());
@@ -65,10 +43,13 @@ function decideWinner(yourChoice, computerChoice) {
 
 function finalMessage([yourScore]) {
   if (yourScore === 0) {
+    scores["losser"]++;
     return { message: "You Lost!", color: "red" };
   } else if (yourScore === 0.5) {
+    scores["tied"]++;
     return { message: "You tied!", color: "yellow" };
   } else {
+    scores["winner"]++;
     return { message: "You won", color: "green" };
   }
 }
@@ -96,64 +77,47 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
   document.getElementById("flex-box-rps-div").appendChild(humanDiv);
   document.getElementById("flex-box-rps-div").appendChild(messageDiv);
   document.getElementById("flex-box-rps-div").appendChild(botDiv);
+
+  document.querySelector("#winner").textContent = scores["winner"];
+  document.querySelector("#losser").textContent = scores["losser"];
+  document.querySelector("#tied").textContent = scores["tied"];
 }
 
-//! Challenge 4
-let all_buttons = document.getElementsByTagName("button");
+document.querySelector("#play-again").addEventListener("click", tryAgain);
 
-let copyAllButtons = [];
-for (let i = 0; i < all_buttons.length; i++) {
-  copyAllButtons.push(all_buttons[i].classList[1]);
+function tryAgain() {
+  document.getElementById("flex-box-rps-div").textContent = "";
+
+  let rock = document.createElement("img");
+  rock.src =
+    "https://www.hoekhavelte.nl/wp-content/uploads/2017/05/Beach-Pebbles-Zwart-50-70-Droog.jpg";
+  rock.setAttribute("id", "rock");
+  rock.setAttribute("onclick", "rpsGame(this)");
+  rock.style.height = "150";
+  rock.style.width = "150";
+
+  let paper = document.createElement("img");
+  paper.src =
+    "http://www.paperduke.com/wp-content/uploads/2017/06/Free-Printable-Notebook-Paper-e1497490624975.jpg";
+  paper.setAttribute("id", "paper");
+  paper.setAttribute("onclick", "rpsGame(this)");
+  paper.style.height = "150";
+  paper.style.width = "150";
+
+  let scissor = document.createElement("img");
+  scissor.src =
+    "https://clipartion.com/wp-content/uploads/2015/10/scissors-clipart-school-pinterest.jpg";
+  scissor.setAttribute("id", "scissor");
+  scissor.setAttribute("onclick", "rpsGame(this)");
+  scissor.style.height = "150";
+  scissor.style.width = "150";
+
+  document.querySelector("#flex-box-rps-div").appendChild(rock);
+  document.querySelector("#flex-box-rps-div").appendChild(paper);
+  document.querySelector("#flex-box-rps-div").appendChild(scissor);
 }
 
-function buttonColorChange(buttonThingy) {
-  if (buttonThingy.value === "red") {
-    buttonsRed();
-  } else if (buttonThingy.value === "green") {
-    buttonsGreen();
-  } else if (buttonThingy.value === "reset") {
-    buttonsColorReset();
-  } else if (buttonThingy.value === "random") {
-    randomColor();
-  }
-}
-
-function buttonsRed() {
-  for (let i = 0; i < all_buttons.length; i++) {
-    all_buttons[i].classList.remove(all_buttons[i].classList[1]);
-    all_buttons[i].classList.add("btn-danger");
-  }
-}
-
-function buttonsGreen() {
-  for (let i = 0; i < all_buttons.length; i++) {
-    all_buttons[i].classList.remove(all_buttons[i].classList[1]);
-    all_buttons[i].classList.add("btn-success");
-  }
-}
-
-function buttonsColorReset() {
-  for (let i = 0; i < all_buttons.length; i++) {
-    all_buttons[i].classList.replace(
-      all_buttons[i].classList[1],
-      copyAllButtons[i]
-    );
-  }
-}
-
-function randomColor() {
-  let choices = ["btn-primary", "btn-danger", "btn-success", "btn-warning"];
-
-  for (let i = 0; i < all_buttons.length; i++) {
-    let randomNumber = Math.floor(Math.random() * 4);
-    all_buttons[i].classList.replace(
-      all_buttons[i].classList[1],
-      choices[randomNumber]
-    );
-  }
-}
-
-//! Challenge 5: Blackjack
+//! Game 2
 
 let blackjackGame = {
   you: { scoreSpan: "#your-blackjack-result", div: "#your-box", score: 0 },
@@ -208,7 +172,6 @@ document
 function blackjackHit() {
   if (blackjackGame["isStand"] === false) {
     let card = randomCard();
-    console.log(card);
     showCard(card, YOU);
     updateScore(card, YOU);
     showScore(YOU);

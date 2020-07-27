@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Javascript on steroids</title>
+    <link rel="shortcut icon" href="static/images/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -12,36 +13,9 @@
     <link rel="stylesheet" href="static/css/style.css" />
   </head>
   <body>
-    <!-- Challenge 1 -->
+    <!-- Game 1 -->
     <div class="container-1">
-      <h2>Challenge 1: Your Age in Days</h2>
-      <div class="flex-box-container-1">
-        <button class="btn btn-primary" onclick="age()">Click me</button>
-        <button class="btn btn-danger" onclick="reset1()">Reset</button>
-      </div>
-      <div class="flex-box-container-1">
-        <span id="result"></span>
-      </div>
-    </div>
-
-    <!-- Challenge 2 -->
-    <div class="container-2">
-      <h2>Challenge 2: Cat Generator</h2>
-      <div class="flex-box-container-2">
-        <button class="btn btn-success" onclick="generateCat()">
-          Generate Cat
-        </button>
-        <button class="btn btn-danger" onclick="reset2()">Remove</button>
-      </div>
-
-      <div class="flex-box-container-2">
-        <div id="cat"></div>
-      </div>
-    </div>
-
-    <!-- Challenge 3 -->
-    <div class="container-3">
-      <h2>Challenge 3: Rock, Paper, Scissor</h2>
+      <h2>Game 1: Rock, Paper, Scissor</h2>
       <div class="flex-box-rps" id="flex-box-rps-div">
         <img
           src="https://www.hoekhavelte.nl/wp-content/uploads/2017/05/Beach-Pebbles-Zwart-50-70-Droog.jpg"
@@ -65,34 +39,28 @@
           onclick="rpsGame(this)"
         />
       </div>
-    </div>
-
-    <!-- Challenge 4 -->
-    <div class="container-4">
-      <h2 id="change-my-color">Challenge 4: Change the Color of All Buttons</h2>
-      <div class="flex-box-pick-color">
-        <form action="">
-          <select
-            name="backdrop"
-            id="background"
-            onchange="buttonColorChange(this)"
-          >
-            <option value="random">Random</option>
-            <option value="red">Red</option>
-            <option value="green">Green</option>
-            <option value="reset">Reset</option></select
-          >
-        </form>
-        <button class="btn btn-primary">Wee!</button>
-        <button class="btn btn-danger">Yahoo!</button>
-        <button class="btn btn-warning">Google!</button>
-        <button class="btn btn-success">Facebook!</button>
+      <div class="table-row">
+        <table style="border: 1px black;">
+          <tr>
+            <th>Wins</th>
+            <th>Losses</th>
+            <th>Tied</th>
+          </tr>
+          <tr>
+            <td><span id="winner">0</span></td>
+            <td><span id="losser">0</span></td>
+            <td><span id="tied">0</span></td>
+          </tr>
+        </table>
+        <button class="btn-lg btn-primary mr-2" id="play-again">
+          Try again
+        </button>
       </div>
     </div>
 
-    <!-- Challenge 5 -->
-    <div class="container-5">
-      <h2>Challenge 5: Blackjack</h2>
+    <!-- Game 2 -->
+    <div class="container-2">
+      <h2>Game 2: Blackjack</h2>
       <h3><span id="blackjack-result">Let's play</span></h3>
       <div class="flex-blackjack-row-1">
         <div id="your-box">
