@@ -1,3 +1,12 @@
+body {
+  background: linear-gradient(90deg, #c7d1db, #d8d8b2);
+}
+
+h2,
+h3 {
+  font-family: "Lobster", cursive;
+}
+
 .container-1,
 .container-2 {
   width: 75%;
@@ -5,6 +14,7 @@
   margin: 0 auto;
   text-align: center;
 }
+
 .table-row,
 .flex-box-rps,
 .flex-blackjack-row-1,
@@ -76,7 +86,7 @@ table,
 th,
 td {
   padding: 5px;
-  border: 1px solid black;
+  border: 2px solid black;
   text-align: center;
 }
 
@@ -86,4 +96,96 @@ td {
 
 .flex-box-rps {
   min-height: 200px;
+  background-color: #fff;
+}
+
+.reset {
+  text-align: center;
+}
+/*
+.reset button {
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 0 10px rgb(71, 68, 68);
+} */
+
+.button-3d-1 {
+  position: relative;
+  background: orangered;
+  border: none;
+  color: white;
+  padding: 15px 24px;
+  font-size: 1.4rem;
+  box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
+  outline: none;
+}
+
+.button-3d-1:hover {
+  background: hsl(16, 100%, 45%);
+}
+
+.button-3d-1:active {
+  background: hsl(16, 100%, 40%);
+  top: 3px;
+  left: -3px;
+  box-shadow: -3px 3px 0 hsl(16, 100%, 30%);
+}
+
+.button-3d-1::before {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 0;
+  width: 0;
+
+  border: solid 6px transparent;
+  border-right: solid 6px hsl(16, 100%, 30%);
+  border-left-width: 0;
+  background: none;
+  top: 0;
+  left: -6px;
+}
+
+.button-3d-1::after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 0;
+  width: 0;
+
+  border: solid 6px transparent;
+  border-top: solid 6px hsl(16, 100%, 30%);
+  border-bottom-width: 0;
+  bottom: -6px;
+  right: 0;
+}
+
+.button-3d-1:active::before {
+  border: solid 6px transparent;
+  border-right: solid 3px hsl(16, 100%, 30%);
+  border-left-width: 0;
+  top: 0;
+  left: -3px;
+}
+
+.button-3d-1:active::after {
+  border: solid 6px transparent;
+  border-top: solid 3px hsl(16, 100%, 30%);
+  border-bottom-width: 0;
+  right: 0;
+  bottom: -3px;
+}
+
+.gradient-button-1 {
+  position: relative;
+  /* z-index: 1; */
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: solid 10px transparent;
+  border-image: linear-gradient(to top right, orangered, yellow);
+  border-image-slice: 1;
 }

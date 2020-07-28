@@ -11,8 +11,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <br />
+    <br />
     <!-- Game 1 -->
     <div class="container-1">
       <h2>Game 1: Rock, Paper, Scissor</h2>
@@ -39,8 +45,15 @@
           onclick="rpsGame(this)"
         />
       </div>
+      <div class="tips">
+        <br />
+        <h3>Rock beats scissor</h3>
+        <h3>Paper beats rock</h3>
+        <h3>Scissor beats paper</h3>
+        <br />
+      </div>
       <div class="table-row">
-        <table style="border: 1px black;">
+        <table>
           <tr>
             <th>Wins</th>
             <th>Losses</th>
@@ -52,11 +65,20 @@
             <td><span id="tied">0</span></td>
           </tr>
         </table>
-        <button class="btn-lg btn-primary mr-2" id="play-again">
+        <!-- <button class="btn-lg btn-primary mr-2" id="play-again">
           Try again
+        </button> -->
+        <button class="gradient-button-1" id="play-again">
+          Try Again
         </button>
+        <!-- <button class="circle" id="play-again">
+          Try Again
+        </button> -->
       </div>
     </div>
+
+    <br />
+    <br />
 
     <!-- Game 2 -->
     <div class="container-2">
@@ -69,6 +91,11 @@
         <div id="dealer-box">
           <h2>Dealer: <span id="dealer-blackjack-result">0</span></h2>
         </div>
+      </div>
+      <div class="tips">
+        <br />
+        <h3>Hit the DEALER without going over 21</h3>
+        <br />
       </div>
       <div class="flex-blackjack-row-2">
         <div>
@@ -84,7 +111,7 @@
         </div>
       </div>
       <div class="flex-blackjack-row-3">
-        <table style="border: 1px black;">
+        <table>
           <tr>
             <th>Wins</th>
             <th>Losses</th>
@@ -98,6 +125,16 @@
         </table>
       </div>
     </div>
+    <br />
+    <br />
+    <div class="reset">
+      <a href="/"
+        ><button type="button" name="button" class="button-3d-1">
+          RESET THE GAME
+        </button></a
+      >
+    </div>
+    <br />
     <br />
     <script src="static/js/script.js"></script>
   </body>
