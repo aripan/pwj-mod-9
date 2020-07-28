@@ -187,6 +187,8 @@ function showCard(card, activePlayer) {
   if (activePlayer["score"] <= 21) {
     let cardImage = document.createElement("img");
     cardImage.src = `static/images/${card}.png`;
+    cardImage.style.height = "7em";
+    cardImage.style.width = "7em";
     document.querySelector(activePlayer["div"]).appendChild(cardImage);
     hitSound.play();
   }
